@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080e1b">
+    <meta name="description" content="LegitEarn Earn and Rewards programme.">
+    <title>Earn & Rewards | LegitEarn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/earn.css">
+    <script src="js/earn.js" defer></script>
+</head>
+
+<body>
+
+<main class="earn-page">
+    <div class="earn-topline"><a class="brand" href="index.html"><i>LE</i><span>Legit<b>Earn</b></span></a><span class="secure-note">Rewards centre</span></div>
+
+    <header class="page-header">
+        <div>
+            <a href="dashboard.html" class="back-link">← Dashboard</a>
+            <h1>Earn & Rewards</h1>
+            <p>
+                Explore our 30-day participation and loyalty rewards programme.
+            </p>
+        </div>
+        <span class="status-badge">30-Day Programme</span>
+    </header>
+
+    <section class="earn-banner">
+        <div class="banner-content">
+            <span class="banner-tag">LEGITEARN REWARDS</span>
+            <h2>Deposit. Participate. Get Rewarded.</h2>
+            <p>
+                Discover our customer rewards programme and
+                explore the additional loyalty gifts available
+                to eligible participants.
+            </p>
+
+            <div class="banner-details">
+                <div>
+                    <strong>30</strong>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <strong>Rewards</strong>
+                    <span>Programme</span>
+                </div>
+                <div>
+                    <strong>Extra</strong>
+                    <span>Loyalty Gifts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="account-summary">
+        <div class="summary-card">
+            <span>Total Participation</span>
+            <h2>₦0.00</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>Rewards Received</span>
+            <h2>₦0.00</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>Additional Gifts</span>
+            <h2>₦0.00</h2>
+        </div>
+    </section>
+
+    <section class="deposit-section">
+        <div class="section-heading">
+            <div>
+                <h2>Available Programmes</h2>
+                <p>Explore the available participation options.</p>
+            </div>
+        </div>
+
+        <div class="plan-grid">
+
+            <article class="plan-card">
+                <span class="plan-label">STARTER</span>
+                <h3>Starter Programme</h3>
+
+                <div class="plan-price">
+                    <span>₦1,000</span>
+                </div>
+
+                <ul class="plan-features">
+                    <li>30-day programme period</li>
+                    <li>Percentage terms disclosed before participation</li>
+                    <li>Separate promotional gift eligibility</li>
+                    <li>Programme activity tracking</li>
+                </ul>
+
+                <button type="button" class="plan-button" data-plan="starter">
+                    View Details
+                </button>
+            </article>
+
+            <article class="plan-card featured">
+                <span class="plan-label">STANDARD</span>
+                <h3>Standard Programme</h3>
+
+                <div class="plan-price">
+                    <span>₦5,000</span>
+                </div>
+
+                <ul class="plan-features">
+                    <li>30-day programme period</li>
+                    <li>Percentage terms disclosed before participation</li>
+                    <li>Separate promotional gift eligibility</li>
+                    <li>Programme activity tracking</li>
+                </ul>
+
+                <button type="button" class="plan-button" data-plan="standard">
+                    View Details
+                </button>
+            </article>
+
+            <article class="plan-card">
+                <span class="plan-label">PREMIUM</span>
+                <h3>Premium Programme</h3>
+
+                <div class="plan-price">
+                    <span>₦10,000</span>
+                </div>
+
+                <ul class="plan-features">
+                    <li>30-day programme period</li>
+                    <li>Percentage terms disclosed before participation</li>
+                    <li>Separate promotional gift eligibility</li>
+                    <li>Programme activity tracking</li>
+                </ul>
+
+                <button type="button" class="plan-button" data-plan="premium">
+                    View Details
+                </button>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="participation-section">
+        <h2>Participation Details</h2>
+
+        <p>
+            Review the programme details and applicable terms
+            before proceeding.
+        </p>
+
+        <form class="participation-form" id="participationForm" novalidate>
+
+            <div class="form-group">
+                <label for="programme">Select Programme</label>
+
+                <select id="programme" name="programme" required>
+                    <option value="">Choose a programme</option>
+                    <option value="starter">Starter - ₦1,000</option>
+                    <option value="standard">Standard - ₦5,000</option>
+                    <option value="premium">Premium - ₦10,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Participation Amount (₦)</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    placeholder="Enter amount"
+                    min="1000"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Programme Duration</label>
+
+                <input
+                    type="text"
+                    id="duration"
+                    value="30 Days"
+                    readonly
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="rate">Applicable Percentage Terms</label>
+
+                <input
+                    type="text"
+                    id="rate"
+                    value="To be disclosed in approved programme terms"
+                    readonly
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="gift">Additional Loyalty Gift</label>
+
+                <input
+                    type="text"
+                    id="gift"
+                    value="Subject to published eligibility conditions"
+                    readonly
+                >
+            </div>
+
+            <div class="form-notice">
+                All applicable payment arrangements, earnings,
+                programme conditions and promotional rewards
+                must be disclosed before participation.
+            </div>
+
+            <button type="submit" class="submit-button">
+                Review programme details
+                <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+
+        </form>
+    </section>
+
+    <section class="active-programme">
+        <div class="section-heading">
+            <div>
+                <h2>My Active Programme</h2>
+                <p>Track your current participation.</p>
+            </div>
+        </div>
+
+        <div class="empty-state">
+            <div class="empty-icon">📊</div>
+
+            <h3>No Active Programme</h3>
+
+            <p>
+                Your active programme details will appear
+                here when applicable.
+            </p>
+        </div>
+    </section>
+
+    <section class="earnings-history">
+        <h2>Rewards History</h2>
+
+        <div class="history-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="empty-table">
+                            No reward records available yet.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="gift-section">
+        <div class="gift-content">
+            <div class="gift-icon">🎁</div>
+
+            <div>
+                <span class="gift-tag">CUSTOMER APPRECIATION</span>
+
+                <h2>Something Extra for You</h2>
+
+                <p>
+                    LegitEarn may offer additional promotional
+                    gifts to eligible customers who complete
+                    the applicable programme requirements.
+                </p>
+
+                <p>
+                    These gifts are separate from customer
+                    payment arrangements and are funded
+                    independently by LegitEarn.
+                </p>
+            </div>
+        </div>
+
+        <div class="gift-status">
+            <span>Gift Eligibility</span>
+            <strong>Subject to programme terms</strong>
+        </div>
+    </section>
+
+    <section class="programme-terms">
+        <h3>Programme Terms & Conditions</h3>
+
+        <ul>
+            <li>
+                Participation is subject to the published
+                programme conditions.
+            </li>
+
+            <li>
+                Percentage-based payments must have an
+                identifiable and legitimate funding source.
+            </li>
+
+            <li>
+                Additional promotional gifts are separately
+                funded by LegitEarn.
+            </li>
+
+            <li>
+                All applicable payment and withdrawal
+                conditions must be disclosed.
+            </li>
+
+            <li>
+                Participation does not guarantee eligibility
+                for promotional gifts outside the published
+                conditions.
+            </li>
+        </ul>
+    </section>
+
+    <footer class="earn-footer">
+        <p>© 2026 LegitEarn. All rights reserved.</p>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+</main>
+
+<div class="toast" id="earnToast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

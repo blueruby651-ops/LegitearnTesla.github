@@ -1,0 +1,52 @@
+/* LegitEarn global design system — glass, app style */
+:root{
+  --navy-950:#040a1c;--navy-800:#0d1d4a;--navy-700:#12286a;
+  --gold-300:#f6dc8c;--gold-400:#e9bf55;--gold-500:#d4a53a;
+  --text:#f3f5fb;--muted:#a9b3cf;--ok:#3ecf8e;--warn:#f0b429;--err:#ef6461;
+  --glass:rgba(255,255,255,.07);--glass-strong:rgba(255,255,255,.12);--line:rgba(255,255,255,.14);
+  --font-head:'Manrope',system-ui,sans-serif;--font-body:'DM Sans',system-ui,sans-serif;
+  --r:22px;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:var(--text);font:400 1rem/1.5 var(--font-body);-webkit-font-smoothing:antialiased;background:var(--navy-950)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(circle at 14% 10%,rgba(233,191,85,.55),transparent 38%),
+  radial-gradient(circle at 90% 20%,rgba(60,110,255,.55),transparent 40%),
+  radial-gradient(circle at 20% 60%,rgba(40,90,220,.45),transparent 42%),
+  radial-gradient(circle at 82% 88%,rgba(233,191,85,.40),transparent 40%),
+  linear-gradient(160deg,#081842,#040a1c 65%)}
+h1,h2,h3{font-family:var(--font-head);line-height:1.15;margin:0;letter-spacing:-.02em}
+p{margin:0}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold-400);outline-offset:3px;border-radius:8px}
+.wrap{width:min(960px,100% - 2rem);margin-inline:auto}
+.muted{color:var(--muted)}.gold{color:var(--gold-300)}.hidden{display:none!important}
+
+.glass{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.22);border-radius:var(--r);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 18px 40px -20px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:46px;padding:0 1.3rem;border-radius:999px;border:1px solid transparent;font:700 .92rem var(--font-head);cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.btn-gold{background:linear-gradient(180deg,var(--gold-300),var(--gold-500));color:#1a1303;box-shadow:0 8px 22px -8px rgba(212,165,58,.8)}
+.btn-ghost{background:var(--glass-strong);border-color:var(--line)}
+.btn-white{background:#fff;color:#0a1534}
+.btn-block{width:100%}
+
+.brand{display:flex;align-items:center;gap:.55rem;font:800 1.2rem var(--font-head)}
+.brand i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(180deg,var(--gold-300),var(--gold-500));color:#1a1303;font:800 .8rem var(--font-head);font-style:normal}
+.brand b{color:var(--gold-400)}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.field{display:grid;gap:.35rem;margin-bottom:.9rem}
+.field label{font:600 .82rem var(--font-head);color:var(--muted)}
+.field input,.field textarea{min-height:48px;padding:.75rem 1rem;border-radius:14px;border:1px solid var(--line);background:rgba(4,10,28,.45);color:var(--text);font:inherit;width:100%}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold-400);box-shadow:0 0 0 3px rgba(233,191,85,.2)}
+.field [aria-invalid="true"]{border-color:var(--err)}
+.field .error{color:var(--err);font-size:.8rem;min-height:1em}
+
+.badge{display:inline-block;padding:.2rem .65rem;border-radius:999px;font:700 .72rem var(--font-head);background:var(--glass-strong)}
+.badge.ok{color:var(--ok);background:rgba(62,207,142,.14)}.badge.warn{color:var(--warn);background:rgba(240,180,41,.14)}.badge.err{color:var(--err);background:rgba(239,100,97,.14)}
+
+#toasts{position:fixed;left:50%;transform:translateX(-50%);bottom:5.5rem;display:grid;gap:.5rem;z-index:300;width:min(420px,100% - 2rem)}
+.toast{padding:.8rem 1rem;border-radius:14px;background:rgba(7,18,48,.92);backdrop-filter:blur(18px);border:1px solid var(--line);border-left:4px solid var(--gold-500);animation:rise .3s var(--ease)}
+.toast.success{border-left-color:var(--ok)}.toast.error{border-left-color:var(--err)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

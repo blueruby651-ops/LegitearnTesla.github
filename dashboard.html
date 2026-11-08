@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — LegitEarn</title>
+<link rel="icon" href="images/logo.png">
+<meta name="theme-color" content="#040a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></symbol>
+  <symbol id="i-task" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M16 13h2M3 10h18"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="topbar">
+    <div class="hello"><small>Welcome back</small><strong id="userName">Member</strong></div>
+    <div class="avatar" id="avatar" aria-hidden="true">M</div>
+  </header>
+
+  <div data-view="home">
+  <section class="balance" aria-label="Balance">
+    <div class="lbl">Available balance</div>
+    <div class="amt"><span id="balance">₦0.00</span>
+      <button class="eye" id="eyeBtn" aria-label="Hide balance"><svg class="ico"><use href="#i-eye"/></svg></button></div>
+    <div class="row">
+      <a class="btn btn-white" href="transactions.html">Withdraw</a>
+      <a class="btn btn-ghost" href="transactions.html">History</a>
+    </div>
+  </section>
+
+  <div class="mini">
+    <div class="glass"><small>Pending rewards</small><strong id="pending">₦0</strong></div>
+    <div class="glass"><small>Tasks completed</small><strong id="completed">0</strong></div>
+  </div>
+
+  <section class="pool glass" aria-label="Daily reward pool">
+    <div class="top"><span class="muted">Today’s reward pool</span><b id="poolText">₦0 left</b></div>
+    <div class="bar" role="progressbar" aria-label="Pool remaining" aria-valuemin="0" aria-valuemax="100" id="poolBarWrap"><span id="poolBar" style="width:0"></span></div>
+    <small class="muted">Rewards pause when the pool reaches zero.</small>
+  </section>
+
+  <h2 class="sec">Quick actions</h2>
+  <div class="actions glass">
+    <a class="action" href="#tasks"><span><svg class="ico"><use href="#i-task"/></svg></span>Tasks</a>
+    <a class="action" href="transactions.html"><span><svg class="ico"><use href="#i-wallet"/></svg></span>Wallet</a>
+    <a class="action" href="transactions.html"><span><svg class="ico"><use href="#i-clock"/></svg></span>History</a>
+    <a class="action" href="#profile"><span><svg class="ico"><use href="#i-user"/></svg></span>Profile</a>
+  </div>
+
+  <h2 class="sec" id="activity">Recent activity</h2>
+  <div class="list" id="activityList"></div>
+  </div>
+
+  <div data-view="tasks" class="hidden">
+  <h2 class="sec">Available tasks</h2>
+  <div class="list" id="taskList"></div>
+  </div>
+
+  <div data-view="profile" class="hidden">
+  <section class="invite glass" aria-label="Invite friends">
+    <h3>Invite friends, earn together</h3>
+    <p class="muted">When a friend you invite completes their first task, you earn a bonus.</p>
+    <div class="inv-code"><small>Your code</small><b id="refCode">—</b></div>
+    <div class="inv-stats"><div><small>Friends joined</small><b id="refCount">0</b></div><div><small>Bonus earned</small><b id="refEarned">₦0</b></div></div>
+    <div class="inv-acts"><button class="btn btn-gold" type="button" id="shareRef">Share on WhatsApp</button><button class="btn btn-ghost" type="button" id="copyRef">Copy link</button></div>
+  </section>
+  <h2 class="sec">Profile</h2>
+  <div class="profile glass">
+    <div><span>Name</span><b id="pName">—</b></div>
+    <div><span>Email</span><b id="pEmail">—</b></div>
+    <div><span>Status</span><span class="badge ok" id="badge">Active</span></div>
+    <a class="btn btn-white btn-block hidden" id="adminLink" href="admin.html">Open admin panel</a>
+    <button class="btn btn-ghost btn-block" id="logout" style="margin-top:.6rem"><svg class="ico"><use href="#i-out"/></svg> Log out</button>
+  </div>
+  </div>
+</div>
+
+<div class="tabbar"><nav aria-label="Main">
+  <a class="on" data-nav="home" href="#home"><svg class="ico"><use href="#i-home"/></svg>Home</a>
+  <a data-nav="tasks" href="#tasks"><svg class="ico"><use href="#i-task"/></svg>Tasks</a>
+  <a href="transactions.html"><svg class="ico"><use href="#i-wallet"/></svg>Wallet</a>
+  <a data-nav="profile" href="#profile"><svg class="ico"><use href="#i-user"/></svg>Profile</a>
+</nav></div>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="glass sheet-box">
+    <h3 id="sheetTitle">Task</h3>
+    <p class="muted" id="sheetDesc" style="margin-bottom:1rem"></p>
+    <form id="taskForm" novalidate>
+      <div id="qWrap"></div>
+      <span class="error" id="formError" aria-live="polite" style="display:block;margin:.2rem 0 .8rem"></span>
+      <button class="btn btn-gold btn-block" type="submit">Submit for review</button>
+      <button class="btn btn-ghost btn-block" type="button" id="sheetClose" style="margin-top:.6rem">Cancel</button>
+    </form>
+  </div>
+</div>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

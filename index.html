@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LegitEarn — Earn with clarity. Save with confidence.</title>
+<link rel="icon" href="images/logo.png">
+<meta name="theme-color" content="#040a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+<main class="wrap land">
+  <div class="land-top"><div class="brand"><i>LE</i><span>Legit<b>Earn</b></span></div></div>
+  <div class="land-grid">
+    <div>
+      <h1>Earn with clarity.<br><span class="gold">Save with confidence.</span></h1>
+      <p class="sub">Complete reviewed tasks. Get rewarded from a daily pool.</p>
+      <div class="chips">
+        <span class="chip glass">Reviewed tasks</span>
+        <span class="chip glass">Daily reward pool</span>
+        <span class="chip glass">Paid 15th &amp; month-end</span>
+      </div>
+    </div>
+    <section class="auth glass" aria-label="Sign in or create account">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="login">Log in</button>
+        <button role="tab" aria-selected="false" data-tab="register">Sign up</button>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="field"><label for="le">Email</label><input id="le" name="email" type="email" autocomplete="email" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="lp">Password</label><input id="lp" name="password" type="password" autocomplete="current-password" required><span class="error" aria-live="polite"></span></div>
+        <button class="btn btn-gold btn-block" type="submit">Log in</button>
+        <button class="link" type="button" id="forgotBtn">Forgot password?</button>
+      </form>
+      <form id="forgotForm" class="hidden" novalidate>
+        <p class="muted" style="margin-bottom:1rem;font-size:.9rem">Enter your email and we will send you a link to choose a new password.</p>
+        <div class="field"><label for="fe">Email</label><input id="fe" name="email" type="email" autocomplete="email" required><span class="error" aria-live="polite"></span></div>
+        <button class="btn btn-gold btn-block" type="submit">Send reset link</button>
+        <button class="link" type="button" id="backBtn">Back to log in</button>
+      </form>
+      <form id="registerForm" class="hidden" novalidate>
+        <div class="field"><label for="rn">Full name</label><input id="rn" name="name" autocomplete="name" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="re">Email</label><input id="re" name="email" type="email" autocomplete="email" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="rp">Password (8+ characters)</label><input id="rp" name="password" type="password" autocomplete="new-password" minlength="8" required><span class="error" aria-live="polite"></span></div>
+        <div class="field check"><input id="rt" name="terms" type="checkbox" required><label for="rt">I am 18 or older and agree to the <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</label><span class="error" aria-live="polite"></span></div>
+        <button class="btn btn-gold btn-block" type="submit">Create account</button>
+      </form>
+    </section>
+  </div>
+  <p class="foot"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · © 2026 LegitEarn</p>
+</main>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/homepage.js"></script>
+</body>
+</html>

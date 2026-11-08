@@ -1,0 +1,19 @@
+body{padding-bottom:5.5rem}
+.box{padding:1.1rem;margin-top:.9rem}
+.box h3{font-size:1rem;margin-bottom:.3rem}
+.note{color:var(--muted);font-size:.82rem;margin-bottom:.9rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.quick{display:flex;gap:.5rem;flex-wrap:wrap;margin:-.2rem 0 .9rem}
+.quick button{min-height:36px;padding:0 .9rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--text);font:700 .8rem var(--font-head);cursor:pointer}
+.sub{font-size:.76rem;color:var(--muted)}
+
+.paycard{position:relative;overflow:hidden;margin-top:.9rem;padding:1.3rem;border-radius:var(--r);background:linear-gradient(135deg,rgba(233,191,85,.30),rgba(60,110,255,.30) 60%,rgba(12,31,92,.40));border:1px solid rgba(255,255,255,.30);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 24px 50px -24px rgba(20,50,140,.9),inset 0 1px 0 rgba(255,255,255,.3)}
+.paycard::after{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(246,220,140,.5),transparent 70%);pointer-events:none}
+.pc-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
+.pc-tag{font:700 .75rem var(--font-head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-300)}
+.pc-bank{padding:.3rem .9rem;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font:800 .85rem var(--font-head)}
+.pc-label{position:relative;z-index:1;font-size:.72rem;color:#c8d3f5;margin-top:.7rem}
+.pc-num{position:relative;z-index:1;font:800 clamp(1.7rem,8vw,2.2rem) var(--font-head);letter-spacing:.1em;color:#fff;overflow-wrap:anywhere}
+.pc-name{position:relative;z-index:1;font:700 1.05rem var(--font-head);overflow-wrap:anywhere}
+.pc-actions{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.2rem}
+.pc-note{position:relative;z-index:1;margin-top:.9rem;font-size:.74rem;color:#c8d3f5;line-height:1.4}

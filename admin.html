@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — LegitEarn</title>
+<link rel="icon" href="images/logo.png">
+<meta name="theme-color" content="#040a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body style="padding-bottom:2rem">
+<div class="wrap">
+  <header class="topbar">
+    <div class="hello"><small>LegitEarn</small><strong>Admin panel</strong></div>
+    <a class="back" href="dashboard.html">← Dashboard</a>
+  </header>
+
+  <nav class="seg" id="seg" aria-label="Admin sections">
+    <button class="on" data-tab="overview">Overview</button>
+    <button data-tab="tasks">Tasks</button>
+    <button data-tab="reviews">Reviews</button>
+    <button data-tab="payouts">Payouts</button>
+    <button data-tab="users">Users</button>
+    <button data-tab="logs">Logs</button>
+  </nav>
+
+  <section class="panel on" id="p-overview">
+    <div class="stats" id="stats"></div>
+    <div class="glass box">
+      <h3>Daily reward pool</h3>
+      <div class="pool-line" id="poolInfo" style="margin-bottom:.4rem"></div>
+      <div class="bar"><span id="poolBar" style="width:0"></span></div>
+      <form id="allocForm" novalidate style="margin-top:.8rem">
+        <div class="field"><label for="alloc">Daily allocation (₦)</label><input id="alloc" type="number" min="0" step="0.01" required><span class="error" aria-live="polite"></span></div>
+        <button class="btn btn-gold btn-block" type="submit">Save allocation</button>
+      </form>
+    </div>
+    <div class="glass box">
+      <h3>Record sponsor funding</h3>
+      <form id="fundForm" novalidate>
+        <div class="field"><label for="fs">Sponsor name</label><input id="fs" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="fa">Amount (₦)</label><input id="fa" type="number" min="1" step="0.01" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="fn">Note (optional)</label><input id="fn"></div>
+        <button class="btn btn-gold btn-block" type="submit">Record funding</button>
+      </form>
+      <div class="list" id="fundList" style="margin-top:.9rem"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-tasks">
+    <div class="glass box">
+      <h3>Create a task</h3>
+      <form id="taskForm" novalidate>
+        <div class="field"><label for="tt">Title</label><input id="tt" required><span class="error" aria-live="polite"></span></div>
+        <div class="field"><label for="td">Description</label><textarea id="td" rows="3"></textarea></div>
+        <div class="field"><label for="tq">Questions (one per line)</label><textarea id="tq" rows="5" placeholder="Which do you prefer? | Option A | Option B&#10;Tell us why (no options = written answer)"></textarea><span class="error" aria-live="polite"></span></div>
+        <div class="row2">
+          <div class="field"><label for="tr">Reward (₦)</label><input id="tr" type="number" min="1" step="0.01" required><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="tm">Max completions</label><input id="tm" type="number" min="1" placeholder="No limit"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="tc">Type</label><select id="tc"><option value="survey">Survey</option><option value="quiz">Quiz</option><option value="feedback">Feedback</option><option value="other">Other</option></select></div>
+          <div class="field"><label for="ts">Status</label><select id="ts"><option value="active">Active</option><option value="draft">Draft</option></select></div>
+        </div>
+        <div class="field"><label for="ta">Reward as soon as the user completes it?</label><select id="ta"><option value="yes">Yes, add money instantly</option><option value="no">No, I review first</option></select></div>
+        <button class="btn btn-gold btn-block" type="submit">Create task</button>
+      </form>
+    </div>
+    <div class="list" id="taskList"></div>
+  </section>
+
+  <section class="panel" id="p-reviews"><div class="list" id="reviewList"></div></section>
+  <section class="panel" id="p-payouts"><div class="list" id="payoutList"></div></section>
+  <section class="panel" id="p-users"><div class="list" id="userList"></div></section>
+  <section class="panel" id="p-logs"><div class="list" id="logList"></div></section>
+</div>
+<div id="toasts" role="status" aria-live="polite" style="bottom:1.5rem"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

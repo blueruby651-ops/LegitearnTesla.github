@@ -1,0 +1,10 @@
+.legal{padding:1.5rem 0 3rem}
+.legal .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem}
+.legal .top a.back{color:var(--gold-300);font:700 .85rem var(--font-head)}
+.doc{padding:1.6rem}
+.doc h1{font-size:1.7rem;margin-bottom:.3rem}
+.doc .upd{color:var(--muted);font-size:.8rem;margin-bottom:1.4rem}
+.doc h2{font-size:1.02rem;margin:1.4rem 0 .4rem;color:var(--gold-300)}
+.doc p,.doc li{color:#d9e0f2;font-size:.92rem;margin-bottom:.6rem}
+.doc ul{padding-left:1.2rem;margin:0 0 .6rem}
+.doc a{color:var(--gold-300);text-decoration:underline}
